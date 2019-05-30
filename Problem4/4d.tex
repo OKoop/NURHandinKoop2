@@ -1,0 +1,59 @@
+\subsection*{4d}
+
+We start by creating a particle mesh and getting the $S(q)$ from Gaussian Random Fields.\\
+Then we use the described update-rule to get and plot new positions for each $a$ in $\{1/51,....,1\}$.
+
+The code used for running the problem is:
+\lstinputlisting{./Problem4/Handin24d.py}
+
+It produced the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem4/outputs4d.txt}
+}}
+
+The code produced a movie contained in the folder for Problem 4.\\
+
+It produces the following figures:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem4/3dposx.png}
+  \caption{\textit{The x-position of the first ten particles along the z-axis (all starting at $x=0$).}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem4/3dposy.png}
+  \caption{\textit{The y-position of the first ten particles along the z-axis (all starting at $x=0$ and $y=0$). The jumps occur due to the periodic boundary conditions.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem4/3dposz.png}
+  \caption{\textit{The z-position of the first ten particles along the z-axis (all starting at $x=0$ and $y=0$ and $z=0,1,2,3,4,5,6,7,8,9$). The jumps occur due to the periodic boundary conditions.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem4/3dmom.png}
+  \caption{\textit{The absolute value of the momentum for the first 10 particles.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem4/3dmomx.png}
+  \caption{\textit{The value of the x-momentum for the first 10 particles.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem4/3dmomy.png}
+  \caption{\textit{The value of the y-momentum for the first 10 particles.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem4/3dmomz.png}
+  \caption{\textit{The value of the z-momentum for the first 10 particles.}}
+\end{figure}

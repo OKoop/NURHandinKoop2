@@ -1,0 +1,18 @@
+\subsection*{4ab}
+
+I implemented the romberg integration algorithm and the Ridders method for differentiation.\\
+Wolfram Alpha gives as result for $D(z=50)=0.019607780428266$, and for $dD/dt=273.8054053377905$, given that result for the integral. We'll take these as the analytical values.\\
+I present both a and b together because they depend quite heavily on each other.\\
+The analytical time-derivative of $D(t)$ is given as:
+$$\dot{D}(t)=\dfrac{5H_0}{2}\Omega_m\left(\dfrac{-3\Omega_m a^{-3}}{2}\int\limits_z^{\infty}\dfrac{1+z'}{H^3(z')}dz'+\dfrac{1}{a^2*H(z)}\right).$$
+
+The code used for running the problem is:
+\lstinputlisting{./Problem4/Handin24ab.py}
+
+It produced the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem4/outputs4ab.txt}
+}}
+
+Thus we have managed to get within the $10^{-5}$ accuracy asked. We did however not manage to get the asked accuracy for the derivative. This could be due to the fact that we perform an integration within the function that has to find the derivative. Furthermore it could be due to Ridders algorithm not being suitable here, because of weird artefacts in the function. I did not take the time to research this into too much detail.

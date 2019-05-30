@@ -1,0 +1,58 @@
+\section{Linear structure growth}
+
+Here we look at the answers to Problem 3 from the second Hand-in set. The general functions that I use are coded up in a more general file given before the solutions. It mainly contains the ODE-er class, which can perform the Runge-Kutta 4th order algorithm for a second order ODE.\\
+I implemented RK4 because it is the most simple and robust, and it works in this case.\\
+Given $a$ we find:
+\begin{align*}
+a &= \left(\dfrac{3H_0t}{2}\right)^{2/3}\\
+\dot{a} &= \dfrac{2}{3}\dfrac{3H_0}{2}\left(\dfrac{3 H_0 t}{2}\right)^{-1/3} = H_0\left(\dfrac{3 H_0 t}{2}\right)^{-1/3}\\
+\dfrac{\dot{a}}{a} &= H_0\dfrac{2}{3 H_0 t} = \dfrac{2}{3t}\\
+\dfrac{1}{a^3} &= \dfrac{4}{9H_0^2t^2}.
+\end{align*}
+Thus the 2nd order ODE becomes:
+$$\dfrac{d^2D}{dt^2}+\dfrac{4}{3t}\dfrac{dD}{dt}=\dfrac{2}{3t^2}\Omega_0D.$$
+We split the 2nd order ODE into a pair of coupled 1st order ODEs:
+\begin{align*}
+\dfrac{dD}{dt} &= z\\
+\dfrac{dz}{dt} &= \dfrac{2}{3t^2}\Omega_0D - \dfrac{4}{3t}z
+\end{align*}
+
+The analytical solution of these, for $\Omega_0=\Omega_m=1$, is given as:
+\begin{align*}
+D(t) &= C_1t^{2/3}+C_2/t\\
+C_1 &= \dfrac{3}{5}(D(1)+D'(1))\\
+C_2 &= \dfrac{2}{5}\left(D(1) - \dfrac{3}{2}D'(1)\right)
+\end{align*}
+
+Our script is given by:
+\lstinputlisting{./Problem3/functions23.py}
+
+
+The code used for running the problem is:
+\lstinputlisting{./Problem3/Handin23.py}
+
+It produced the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem3/outputs3.txt}
+}}
+
+It produces the following figures:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem3/32.png}
+  \caption{\textit{The analytical and numerical solution from $t=1$ to $t=1000$ years of the ODE. Initial conditions are: $D(1)=3$ and $D'(1)=2$.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem3/1010.png}
+  \caption{\textit{The same as the last figure but with $D(1)=10$ and $D'(1)=-10$.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem3/50.png}
+  \caption{\textit{The same as the last figure but with $D(1)=5$ and $D'(1)=0$.}}
+\end{figure}

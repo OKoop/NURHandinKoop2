@@ -1,0 +1,111 @@
+\documentclass[10pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\setlength{\textheight}{25.7cm}
+\setlength{\textwidth}{16cm}
+\setlength{\unitlength}{1mm}
+\setlength{\topskip}{2.5truecm}
+\topmargin 260mm \advance \topmargin -\textheight 
+\divide \topmargin by 2 \advance \topmargin -1in 
+\headheight 0pt \headsep 0pt \leftmargin 210mm \advance
+\leftmargin -\textwidth 
+\divide \leftmargin by 2 \advance \leftmargin -1in 
+\oddsidemargin \leftmargin \evensidemargin \leftmargin
+\parindent=0pt
+\frenchspacing
+\usepackage{microtype}
+\usepackage{tikz}
+\usepackage[english,dutch]{babel}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[procnames]{listings}
+\newcommand{\iso}{\ \raisebox{0.1ex}{\ensuremath{\stackrel{\sim}{\longrightarrow}}\ \,}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\e}{\epsilon}
+\renewcommand{\O}{\Omega}
+\renewcommand{\o}{\omega}
+\newcommand{\p}[2]{\dfrac{\partial #1}{\partial #2}}
+\renewcommand{\a}{\alpha}
+\renewcommand{\r}{\rho}
+\renewcommand{\b}{\beta}
+\newcommand{\D}{\Delta}
+\newcommand{\s}{\sigma}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\renewcommand{\d}{\delta}
+\renewcommand{\l}{\lambda}
+\renewcommand{\t}{\theta}
+\renewcommand{\L}{\Lambda}
+\newcommand{\ov}[1]{\overline{#1}}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ 
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  firstnumber=1,                   % start line enumeration with line 1000
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Python,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=4,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\title{NUR Solutions Hand-In Set 2}
+\author{Orlin Koop, s1676059}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+In this document the solutions for the NUR second hand-in set are given. The Output of the python script per subquestion is shown, with commentary. We thus have sections and subsections for each exercise.
+\end{abstract}
+
+Note that when nothing shows up under the sentence: "It produces the following output in .txt", no output was generated.
+
+\input{./Problem1/P1}
+
+\input{./Problem2/P2}
+
+\input{./Problem3/P3}
+
+\input{./Problem4/P4}
+
+\input{./Problem5/P5}
+
+\input{./Problem6/P6}
+
+\input{./Problem7/P7}
+
+\input{Failed}
+
+\end{document}

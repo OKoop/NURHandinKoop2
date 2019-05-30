@@ -1,0 +1,53 @@
+\subsection*{5ab}
+
+If the shape is a delta function with a given mass, and we take the mass and size to be of unit value (physical unit not important) we get the results found below. I combined 5a and b because they depend on each other.\\
+
+To find the grid point closest to a particle we add $.5$ and make an int out of it, because that rounds it down always. We thus assign the mass of the particle to the grid point closest to it by adding 1 to the cell signified by the hereby found coordinates.\\
+
+The code used for running the problem is:
+\lstinputlisting{./Problem5/Handin25ab.py}
+
+It produced the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem5/outputs5ab.txt}
+}}
+
+It produced the following figures:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/a4.png}
+  \caption{\textit{The slice for $z=4$ of the NGP-method mesh.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/a9.png}
+  \caption{\textit{The slice for $z=4$ of the NGP-method mesh.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/a11.png}
+  \caption{\textit{The slice for $z=4$ of the NGP-method mesh.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/a14.png}
+  \caption{\textit{The slice for $z=4$ of the NGP-method mesh.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/b4.png}
+  \caption{\textit{The value of the bin for the 4th cell for one particle at all possible positions.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/b0.png}
+  \caption{\textit{The value of the bin for the 0th cell for one particle at all possible positions.}}
+\end{figure}
+
+The last two figures look as I'd have expected given the method we use (and the periodic boundary conditions).

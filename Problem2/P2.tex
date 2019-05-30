@@ -1,0 +1,42 @@
+\section{Making an initial density field}
+
+Here we look at the answers to Problem 2 from the second Hand-in set. The general functions that I use are coded up in a more general file given before the solutions. This is the basis for the functions used in Problem 4.
+
+Our script is given by:
+\lstinputlisting{./Problem2/functions22.py}
+
+I do create my own array with ks-values which is a bit costly but I did not see another way.\\
+I then iterate over only the top half of the 2D-array (including the Nyquist-band) because all those indexes are then mirrored into the bottom half when trying to get the array to be symmetric.\\
+I generate all random numbers at once and then take them from this array to only call the RNG once during the entire program. Therefore you can clearly see the effect of $n$ in:
+$\s^2=P(k)=k^n.$
+
+The code used for running the problem is:
+\lstinputlisting{./Problem2/Handin22.py}
+
+It produced the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem2/outputs2.txt}
+}}
+
+It produces the following figures:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem2/n1.png}
+  \caption{\textit{A GRF created in the Fourier space and then inversed Fourier transformed. The dispersion of the random complex numbers is $\s^2=k^{-1}$, where $k$ is the wavenumber. The axes are in Mpc.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem2/n2.png}
+  \caption{\textit{The same as the last figure but with $\s^2=k^{-2}$.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem2/n3.png}
+  \caption{\textit{The same as the last figure but with $\s^2=k^{-3}$.}}
+\end{figure}
+
+When the minimum size is equal to $1$Mpc (space of one pixel), the maximal size is that of the diagonal, thus $1448$Mpc, because two points at both sides of the diagonal create a wave of length 1448Mpc.\\
+This means the minimal $k$ is equal to $0$, when both indices are $0$, because $k_j=\dfrac{2\pi}{N_g}\cdot i_j$, and $k=\sqrt{k_x^2+k_y^2}$. The maximal $k$ is thus equal to $k_x=2\pi/N_g\cdot N_g/2 = \pi$, thus $k=\sqrt{2}\pi$.

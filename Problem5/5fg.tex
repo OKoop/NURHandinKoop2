@@ -1,0 +1,52 @@
+\subsection*{5fg}
+
+We apply the FFT-algorithm to the mesh created in c. We create a $k_x,k_y,k_z$-array to find $k^2$ for all the points and divide. Then we IFFT (only difference is $i-->-i$ in the exponential for this) to find the potential up to a constant (which should include the normalization factor needed for the IFFT).\\
+To deal with $k^2=0$ for $k_x=k_y=k_z=0$ I set that value to $1$ instead.\\
+The potential has enormous values, but is defined up to a constant, although I do not trust that I need to do it this way.
+
+The code used for running the problem is:
+\lstinputlisting{./Problem5/Handin25fg.py}
+
+It produced the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem5/outputs5fg.txt}
+}}
+These are the ten gradients of the first ten randomly generated positions from a.
+
+It produced the following figures:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/f4.png}
+  \caption{\textit{Slice of the potential according to (16) of the mesh from 5c at $z=4$.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/f9.png}
+  \caption{\textit{Slice of the potential according to (16) of the mesh from 5c at $z=9$.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/f11.png}
+  \caption{\textit{Slice of the potential according to (16) of the mesh from 5c at $z=11$.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/f14.png}
+  \caption{\textit{Slice of the potential according to (16) of the mesh from 5c at $z=14$.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/f7yz.png}
+  \caption{\textit{Slice of the potential according to (16) of the mesh from 5c at $x=7$.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/f7xz.png}
+  \caption{\textit{Slice of the potential according to (16) of the mesh from 5c at $y=7$.}}
+\end{figure}

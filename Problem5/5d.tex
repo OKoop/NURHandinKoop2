@@ -1,0 +1,21 @@
+\subsection*{5d}
+
+I sort of implemented the algorithm from the slides, but it did not seem to work, so I changed a few things, and then did not need a bit-reversal anymore. The results are in agreement with analytical soltions and the scipy fftpack, so I do not know what is going right/wrong.\\
+
+The code used for running the problem is:
+\lstinputlisting{./Problem5/Handin25d.py}
+
+It produced the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem5/outputs5d.txt}
+}}
+
+It produced the following figures:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/1d.png}
+  \caption{\textit{FFT of $f(x)=\sin(2\pi x/5)$ for my implementation, scipy.fftpack and the analytical value. I used 64 values between $0$ and 20 to take the FFT.}}
+\end{figure}
+
+Because of the log-y-scale you do not see the $0$ amplitudes of the theoretical FFT. You can see that the FFTs are all in agreement. (Except the numerical FFT's are not as defined as the theoretical one).

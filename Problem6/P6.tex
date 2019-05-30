@@ -1,0 +1,36 @@
+\section{Classifying $\gamma$-ray bursts}
+
+Here we look at the answers to Problem 6 from the second Hand-in set. The general functions that I use are coded up in a more general file given before the solutions.\\
+
+I just implemented all needed ingredients for logistic regression as can be found in Lecture 9.\\
+
+We deleted the two rows where $T_{90}$ was missing and set all data with $T_{90}\geq10$ as being a long $\gamma$-ray burst.\\
+
+To deal with missing data we set $-1$'s to $0$ if the data is not logarithmic, and if they are we take the exponent and then set value that previously were $-1$ equal to $0$.\\
+This should in theory not introduce biases and make it able to get as much data into the model as possible.\\
+
+After some testing we found that the best combination of datacolumns to use was that with redshift, the log of the mass, log of the metallicity and the specific star formation rate.\\
+
+We take a learning parameter as $\alpha=0.309$ and find the output stated below.
+
+Our main functions file is given by:
+\lstinputlisting{./Problem6/functions26.py}
+
+It produced the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem6/outputs6.txt}
+}}
+This shows the optimal parameters for the regression given the datacolumns that we take into account.\\
+It shows the final accuracy and the amount of iterations before reaching that. These thus are parameters such that we have:
+$$\theta_0+\theta_1z+\theta_2(M/M_{\odot})+\theta_3(Z/Z_{\odot})+\theta_4SSFR.$$
+
+It produced the following figures:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem6/6.png}
+  \caption{\textit{The predicted value from logistic regression (0 (and blue) for short and 1 (and orange) for long) for the datapoints. The blue line signifies the threshold that separates the classes.}}
+\end{figure}
+
+As can be seen, it produces two false negatives, 6 true negatives, and many false positives. But, it does give a somewhat better result than just stating True for each datapoint, so it had some effect...\\
+Due to the positions of the datapoints and the many missing datapoints, I did not expect higher orders to make a big difference.

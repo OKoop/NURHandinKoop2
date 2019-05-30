@@ -1,0 +1,25 @@
+\section{Building a quadtree}
+
+Here we look at the answers to Problem 7 from the second Hand-in set. The general functions that I use are coded up in a more general file given before the solutions.\\
+I coded up a class for the node and for the tree respectively, so actions for the entire tree can be performed with one command, and the nodes can store all needed info.\\
+We take the mass to be the one assigned to each particle in the colliding.hdf5-file.
+
+
+Our main functions file is given by:
+\lstinputlisting{./Problem7/functions27.py}
+
+It produced the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem7/outputs7.txt}
+}}
+These are the $n=0$ multipole moments of each node (bottom to top) containing $i=100$.
+
+
+It produced the following figures:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem7/QT.png}
+  \caption{\textit{The quadtree for colliding.hdf5.}}
+\end{figure}
+

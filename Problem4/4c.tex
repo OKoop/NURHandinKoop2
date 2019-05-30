@@ -1,0 +1,50 @@
+\subsection*{4c}
+
+We start by creating a particle mesh and getting the $S(q)$ from Gaussian Random Fields.\\
+Then we use the described update-rule to get and plot new positions for each $a$ in $\{0.0025,....,1\}$.
+
+The code used for running the problem is:
+\lstinputlisting{./Problem4/Handin24c.py}
+
+It produced the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem4/outputs4c.txt}
+}}
+
+The code produced a movie contained in the folder for Problem 4.\\
+
+It produces the following figures:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem4/2dposx.png}
+  \caption{\textit{The x-position of the first ten particles along the y-axis (all starting at $x=0$).}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem4/2dposy.png}
+  \caption{\textit{The y-position of the first ten particles along the y-axis (all starting at $x=0$ and $y=0,1,2,3,4,5,6,7,8,9$). The jumps occur due to the periodic boundary conditions.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem4/2dmom.png}
+  \caption{\textit{The absolute value of the momentum for the first 10 particles.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem4/2dmomx.png}
+  \caption{\textit{The value of the x-momentum for the first 10 particles.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem4/2dmomy.png}
+  \caption{\textit{The value of the y-momentum for the first 10 particles.}}
+\end{figure}
+
+I have no clue how to interpret these figures, but I am astonished by the enormous values that the momenta assume in both directions.\\
+I think this could be due to less accurate integration (I brought down the accuracy here w.r.t. 4a and b, which I did to be able to conserve time because there are many integrals to be taken in 4c and d). It also could be due to the fact that this approximation only holds for lower $a$, and not for $a\approx1$.

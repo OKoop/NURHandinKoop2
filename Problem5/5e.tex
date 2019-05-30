@@ -1,0 +1,67 @@
+\subsection*{5e}
+
+By generalizing the 1d FFT from 5d we get a 2- and 3D-FFT for use in this exercise.\\
+I generalized the sine from 5d for 2D and implemented a multvariate Gaussian (of which we expect just a multivariate Gaussian as FFT again).
+
+The code used for running the problem is:
+\lstinputlisting{./Problem5/Handin25e.py}
+
+It produced the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem5/outputs5e.txt}
+}}
+
+It produced the following figures:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/e2down.png}
+  \caption{\textit{FFT of $f(x,y)=\sin(2\pi (x+y)/5)$ for my implementation.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/e2dscipy.png}
+  \caption{\textit{FFT of $f(x,y)=\sin(2\pi (x+y)/5)$ for scipy.fftpack.}}
+\end{figure}
+
+The theoretical FFT is equal to only the two yellow points shown in the figures above.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/e3dxzscipy.png}
+  \caption{\textit{FFT of a multivariate Gaussian in 3D in the $x-z$-plane for scipy.fftpack.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/e3dxyscipy.png}
+  \caption{\textit{FFT of a multivariate Gaussian in 3D in the $x-y$-plane for scipy.fftpack.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/e3dyzscipy.png}
+  \caption{\textit{FFT of a multivariate Gaussian in 3D in the $y-z$-plane for scipy.fftpack.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/e3dxzown.png}
+  \caption{\textit{FFT of a multivariate Gaussian in 3D in the $x-z$-plane for my own implementation.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/e3dxyown.png}
+  \caption{\textit{FFT of a multivariate Gaussian in 3D in the $x-y$-plane for my own implementation.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem5/e3dyzown.png}
+  \caption{\textit{FFT of a multivariate Gaussian in 3D in the $y-z$-plane for my own implementation.}}
+\end{figure}
+
+As said above this is as we expected.
+
