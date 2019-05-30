@@ -1,0 +1,28 @@
+\subsection*{1c}
+
+We read in the seed saved from 1b to continue producing random numbers. We save the sample created here for use for the same end in question d and e. I implemented mergesort for sorting the data before performing the KS-test on it, because it is fast and easy to implement.\\
+It should be noted that due to the way I implemented the BoxMuller method it can only deal with even sizes, so when you enter an odd number it will return an array with one less element. Therefore some elements from the sample created will not be used.
+
+Our script for this question is given by:
+\lstinputlisting{./Problem1/Handin21c.py}
+
+Our script produces the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem1/outputs1c.txt}
+}}
+
+It produces the following figures:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem1/ds1c.png}
+  \caption{\textit{These are the scipy- and my own values of the KS-statistic (d). As you can see they are identical.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem1/ps1c.png}
+  \caption{\textit{These are the p-values of my own and of scipy's algorithm. The red line is an arbitrary threshold-value. The p-value signifies the probability that the distributions are consistent.}}
+\end{figure}
+
+The p-value oscillates a bit, but is above the given threshold most of the time (and especially for the biggest sample). 

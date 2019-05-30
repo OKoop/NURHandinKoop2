@@ -1,0 +1,20 @@
+\subsection*{1bthen}
+
+I am not quite sure if everything works for this part, but I did code up some algorithms and almost all needed stuff when this was still a question. I used mostly algorithms I already had for Handin 1, and used the easiest, most robust ways of going about this exercise. The downhill simplex is implemented because I did not finish it for the last set and can now show that I got it working again. It is used to find the optimal parameters for the fitted line in logspace.\\
+
+Our script for this question is given by:
+\lstinputlisting{./Problem1/Handin21bthen.py}
+
+Our script produces the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem1/outputs1bt.txt}
+}}
+It gives the numerical coefficients of the line in logspace (see figure below). The analytical coefficients are: {\color{red}Do this if time left.}
+
+It produces the following figures:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem1/fits.png}
+  \caption{\textit{Plot of the exact value of the integrated Gaussian for values of $x=2^i$ ($i=-10,-9,...,10$)(blue line) and the line through those points but when calculated with the Simpson integration algorithm.}}
+\end{figure}

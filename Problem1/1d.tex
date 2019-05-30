@@ -1,0 +1,27 @@
+\subsection*{1d}
+
+We read in the sample from 1c. Now we perform a Kuiper test. We use astropy to check the Kuiper test against.\\
+
+Our script for this question is given by:
+\lstinputlisting{./Problem1/Handin21d.py}
+
+Our script produces the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem1/outputs1d.txt}
+}}
+
+It produces the following figures:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem1/ds1d.png}
+  \caption{\textit{These are the astropy- and my own values of the Kuiper-statistic (d). As you can see they are identical.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem1/ps1d.png}
+  \caption{\textit{These are the p-values of my own and of astropy's algorithm. The red line is an arbitrary threshold-value. It signifies the minimum probability at which the distributions are consistent.}}
+\end{figure}
+
+The p-value oscillates a bit, but is above the given threshold all the time now. 

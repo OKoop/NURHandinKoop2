@@ -1,0 +1,24 @@
+\subsection*{1e}
+
+We read in the sample from 1c. Now we perform a KS-test for each of ten given samples.\\
+To spare time I did not plot the scipy-answer because it was already proven my own implementation gave the same result. Furthermore I increased the spacing of the plot, so less calculation have to be made.
+
+Our script for this question is given by:
+\lstinputlisting{./Problem1/Handin21e.py}
+
+Our script produces the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem1/outputs1e.txt}
+}}
+
+It produces the following figures:
+\begin{figure}[H]
+  \centering
+  \hspace*{-1cm}
+  \includegraphics[width=1.2\linewidth]{./Problem1/e.png}
+  \caption{\textit{These are the scipy- and my own values of the KS-statistic (d). For 10 sets of random numbers, compared with a sample of normally distributed random numbers from my own RNG.}}
+\end{figure}
+
+For time efficiency I chose to plot it as subplots, but now it is not as clear anymore. 
+Only the fourth set is consistent with my own RNG (BoxMuller method with $\mu=0$ and $\s=1$) according to the KS-test.

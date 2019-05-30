@@ -1,0 +1,24 @@
+\subsection*{1bnow}
+
+We read in the seed saved from 1a to continue producing random numbers.\\
+The theoretical distribution is the Normed Gaussian given by:
+$$NG(x,\mu,\s)=\dfrac{1}{\sqrt{2\pi\s^2}}e^{-\dfrac{(x-\mu)^2}{2\s^2}}.$$
+In this case, $\mu=3$ and $\s=2.4$.
+
+Our script for this question is given by:
+\lstinputlisting{./Problem1/Handin21bnow.py}
+
+Our script produces the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem1/outputs1bn.txt}
+}}
+
+It produces the following figures:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem1/1b.png}
+  \caption{\textit{Histogram of RNG-generated BoxMuller normally distributed random numbers. Also a plot of a theoretical normalized gaussian of this distribution. The black lines specify the theoretical $\pm i\s$ intervals for $i=1,2,3,4,5$.}}
+\end{figure}
+
+The y-scale is logarithmic to be able to see the $-5\s$ and $5\s$ regions. I see that the outer regions do not have any values in the sample. This could be due to a few things: 1. A faulty RNG. 2. A mistake in binning. 3. The small size of the sample just not producing an 'outlier'.

@@ -1,0 +1,33 @@
+\subsection*{1a}
+
+We created a RNG which combines a MWC with a XOR-shift, in that combination. Because I made sure the RNG-state is a uint64 at every point in time I am sure this works fine.\\
+Before this I had some problems with the normalization with sys.maxsize and with the randomness when I did not use uint64 as much as now.\\
+
+Our script for this question is given by:
+\lstinputlisting{./Problem1/Handin21a.py}
+
+Our script produces the following output in .txt:
+{\obeylines\obeyspaces
+\texttt{
+\input{./Problem1/outputs1a.txt}
+}}
+It thus states the seed used for questions 1 and 2. For question 4 we have set a new seed.
+
+It produces the following figures:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem1/hist1a.png}
+  \caption{\textit{A histogram of 1 000 000 random numbers generated with the RNG implemented. It can be seen the RNG creates valid pseudo-random uniform samples.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem1/scatter1a1.png}
+  \caption{\textit{Scatterplot of $x_{i+1}$ versus $x_i$ for the first 1000 generated random numbers. Here too we see that it creates valid pseudo-random numbers.}}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{./Problem1/scatter1a2.png}
+  \caption{\textit{Scatterplot of the first 1000 random numbers versus their index (0 through 999). Again this shows the pseudo-randomness of the RNG is good enough for our purposes.}}
+\end{figure}
