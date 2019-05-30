@@ -26,7 +26,7 @@ def ex1e(data):
 #Perform the KStest for the 10 given datasets and plot in a figure with 
 #subplots.
 D = np.loadtxt('randomnumbers.txt')
-fig, axs = plt.subplots(4,5,figsize=(30,20),dpi=100)
+fig, axs = plt.subplots(4,5,figsize=(30,20),dpi=200)
 for i in range(10):
     dse, pse = ex1e(D[:,i])
     if i<5:
