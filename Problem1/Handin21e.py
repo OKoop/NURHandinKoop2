@@ -4,8 +4,8 @@ import numpy as np
 from matplotlib import pyplot as plt
 import functions21 as f
 samp = np.loadtxt('samp.txt')
-r1c = np.zeros(16)
-r1c[1:] = 10.**np.linspace(1,5,15)
+r1c = np.zeros(21)
+r1c[1:] = 10.**np.linspace(1,5,20)
 r1c = np.asarray(r1c,dtype='int')
 n = len(r1c) - 1
 #-------------------- 1(e) ----------------
